@@ -1,0 +1,117 @@
+
+    
+.AuthContainer{
+    background-color: rgba(255, 255, 255, 0.15);
+
+}
+
+.msg{
+    color:lime;
+    font-size: 1rem;
+}
+
+a{
+    margin-top: 1rem;
+    /* color: rgb(0, 119, 255); */
+color: aqua;
+margin: auto;
+margin-top: 1rem;
+}
+.Middle p {
+    font-size: 12px;
+    color:white;
+}
+a:visited {
+color: aqua;
+}
+
+.Middle h2 {
+    text-align: center;
+    /* color:#ff00c7; */
+    color:#ff00cb;
+    letter-spacing: 2px;
+    text-shadow: black 0px 1px 5px;
+}
+
+.Middle{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    width: 13rem;
+    height: max-content;
+    padding: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    
+    
+}
+
+form{
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#submit{
+
+background-color: green;
+    border-radius: 34px;
+    height: 3rem;
+    cursor: pointer;
+    transition: 0.5s ;
+    border: none;
+    margin-top: 2rem;
+font-family: outfit;
+font-size: 15px;
+    background-image: linear-gradient(to right, #971d86 0%, #682498 51%, #850f6d 100%);
+    box-shadow: black 0px 1px 3px;
+    color:white;
+    background-size: 200% auto;
+        
+}
+
+#submit:hover{
+    /* background-color: #080013; */
+    background-position: right center;
+}
+.submit:focus{
+    outline:none;
+    border:none;
+}
+.text{
+    margin-top: 2rem;
+    background: none;
+    border: none;
+    height: 2rem;
+    border-bottom: 2px solid black;
+    color:white;
+    transition: 0.2s ease;
+}
+
+.text:focus{
+    outline:none;
+    border-bottom: 2px solid  rgb(0, 89, 255);
+}
+
+.warp{
+    width: 20rem;
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width:399px) {
+    .Middle{
+        width: 14rem;
+            height: 27rem;
+            padding: 2rem;
+            padding-top: 2rem;
+
+            /* padding-top: 5rem; */
+    }
+}

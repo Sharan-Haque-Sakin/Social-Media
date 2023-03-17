@@ -1,0 +1,11 @@
+.popup{
+    width: 14rem;
+    height: 5rem;
+    color:lime;
+}
+
+.popup p{
+    color:lime;
+    font-size: 1rem;
+    text-align: center;
+}
