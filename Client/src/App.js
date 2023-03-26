@@ -11,8 +11,20 @@ import NotFound from "./Components/Pages/NotFound";
 import Post from "./Components/Pages/Post";
 import Profile from "./Components/Pages/Profile";
 import SignUpComponent from "./Components/SignUpComponent";
-
+import { useNavigate } from "react-router-dom";
+import Cookies from "universal-cookie";
+import { useEffect } from "react";
 const App = () => {
+  const cookies = new Cookies();
+  const check = cookies.get("authcookie");
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!check) {
+      navigate("/");
+    } else {
+      console.log("ok");
+    }
+  }, []);
   return (
     <div className="Container">
       <Routes>

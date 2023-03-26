@@ -35,6 +35,7 @@ input{
 
 .NavIcons{
   font-size: 22px;
+  /* color:#575757; */
 }
 .imgNav{
   width:2rem;
@@ -70,3 +71,5 @@ input{
 body{
   overflow: scroll;
 }
+
+/* a{} */

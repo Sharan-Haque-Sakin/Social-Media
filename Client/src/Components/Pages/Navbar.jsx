@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
 import { FaUserFriends, FaUpload } from "react-icons/fa";
-import ProfilePic from "../../ProfileImg/profile.png";
-
+// import ProfilePic from "../../ProfileImg/profile.png";
+import Cookies from "universal-cookie";
 const Nav = styled.nav`
   padding-top: 1rem;
   display: flex;
-  background-color: purple;
   color: white;
   padding-bottom: 1rem;
   text-align: center;
+  background-color: purple;
 `;
 
 const ItemsContainer = styled.ul`
@@ -38,27 +39,48 @@ const Links = styled.a`
   text-decoration: none;
   color: white;
 `;
+const cookies = new Cookies();
+const Navbar = (props) => {
+  const [name, setName] = useState("");
+  const navigate = useNavigate();
+  function handleLogOut() {
+    cookies.remove("authcookie");
+    navigate("/");
+  }
 
-const Navbar = () => {
+  useEffect(() => {
+    fetch("/posts/getname")
+      .then((data) => {
+        return data.json();
+      })
+      .then((jsonData) => {
+        setName(jsonData.userName);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <Nav>
-      <p style={{ paddingLeft: "2rem" }}>Social Media</p>
+      {/* <img
+        className="imgNav"
+        style={{ borderRadius: "25px", marginLeft: "2rem" }}
+        src={ProfilePic}
+        alt=""
+      /> */}
+      <p style={{ paddingLeft: "2rem" }}>{name}</p>
+
       <ItemsContainer>
         <Items>
           <Link to={`/home`}>
             <AiFillHome className="NavIcons" />
           </Link>
         </Items>
-        <Items>
-          <Link to={`/profile`}>
-            <img
-              className="imgNav"
-              style={{ borderRadius: "25px" }}
-              src={ProfilePic}
-              alt=""
-            />
-          </Link>
-        </Items>
+        {/* <Items> */}
+        {/* <Link to={`/profile`}> */}
+        {/* </Link> */}
+        {/* </Items> */}
         <Items>
           <Link to={`/friends`}>
             <FaUserFriends className="NavIcons" />
@@ -70,6 +92,13 @@ const Navbar = () => {
             <FaUpload className="NavIcons" />
           </Link>
         </Items>
+
+        <a
+          onClick={() => handleLogOut()}
+          style={{ marginTop: "0rem", marginLeft: "2rem", cursor: "pointer" }}
+        >
+          Log Out
+        </a>
       </ItemsContainer>
     </Nav>
   );

@@ -4,6 +4,15 @@ import Navbar from "./Navbar";
 import { Container } from "./Styles/Pages";
 
 const Home = (props) => {
+  // useEffect(() => {
+  //   // console.log(cookies.get("authcookie"));
+  //   if (!check) {
+  //     // console.log("np");
+  //     navigate("/");
+  //   } else {
+  //     console.log("ok");
+  //   }
+  // }, []);
   return (
     <Container>
       <Navbar />

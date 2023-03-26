@@ -1,10 +1,10 @@
 const Routes = require("express").Router();
 const mongoose = require("mongoose");
 const UserModel = require("./../Models/Model");
+const jwt = require("jsonwebtoken");
 
-Routes.get("/", (req, res) => {
-  res.send("Hey this is users route!");
-});
+// Routes.get("/getname", (req, res) => {
+// });
 
 Routes.post("/signup", async (req, res) => {
   try {

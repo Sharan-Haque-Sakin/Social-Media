@@ -10,6 +10,9 @@ export default function MainPart() {
       })
       .then((jsonData) => {
         setPosts(jsonData);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }, []);
 
@@ -19,6 +22,7 @@ export default function MainPart() {
         Posts.data.map((data, key) => {
           return (
             <Uploads
+              key={key}
               time={data.time}
               userName={data.user.userName}
               content={data.content}

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   background: whitesmoke no-repeat center center fixed;
-  height: 100%;
+  height: 100vh;
 `;
 const MainPart = styled.div`
   margin: auto;

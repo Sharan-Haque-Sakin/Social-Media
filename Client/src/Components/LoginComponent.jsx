@@ -56,6 +56,8 @@ const LoginComponent = () => {
         if (data.success) {
           cookies.set("authcookie", data.jwt, {
             expires: new Date(Date.now() + 2589000000),
+            sameSite: "none",
+            secure: "true",
           });
           setSucces(true);
 

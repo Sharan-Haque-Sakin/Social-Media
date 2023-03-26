@@ -39,7 +39,7 @@ const Uploads = (props) => {
         <Feeds>{props.content}</Feeds>
         <br />
         <br />
-        <span
+        {/* <span
           style={{
             display: "flex",
             margin: "auto",
@@ -63,9 +63,9 @@ const Uploads = (props) => {
             onClick={() => handleDislike()}
           />
         </span>
+        <br />
+      <p style={{ fontSize: "15px" }}>{likes}</p> */}
       </div>
-      {/* <br /> */}
-      <p style={{ fontSize: "15px" }}>{likes}</p>
     </Posts>
   );
 };
