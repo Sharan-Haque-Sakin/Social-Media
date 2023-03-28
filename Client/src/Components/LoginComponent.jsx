@@ -42,7 +42,7 @@ const LoginComponent = () => {
     } else {
       navigate("/home");
     }
-  });
+  }, []);
 
   const OnSubmit = (e) => {
     e.preventDefault();
@@ -112,7 +112,9 @@ const LoginComponent = () => {
             <input type="submit" id="submit" value="Login" />
 
             {/* <p style={{ color: "white" }}>Don't have any account?</p> */}
-            <Link to={`/signup`}>Create Account</Link>
+            <Link to={`/signup`} style={{ color: "aqua" }}>
+              Create Account
+            </Link>
           </form>
         </div>
       </div>

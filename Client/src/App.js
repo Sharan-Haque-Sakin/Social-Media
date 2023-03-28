@@ -44,10 +44,10 @@ const App = () => {
     <div className="Container">
       {/* <Navbar /> */}
       <Routes>
-        <Route element={<WithoutNav />}>
-          <Route path="/" element={<LoginComponent />} />
-          <Route path="/signup" element={<SignUpComponent />} />
-        </Route>
+        {/* <Route element={<WithoutNav />}> */}
+        <Route path="/" element={<LoginComponent />} />
+        <Route path="/signup" element={<SignUpComponent />} />
+        {/* </Route> */}
 
         <Route element={<WithNav />}>
           <Route path="/home" element={<Home />} />

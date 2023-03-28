@@ -103,7 +103,9 @@ const SignUpComponent = (props) => {
             <input type="submit" id="submit" value="Create Account" />
             {/* <div className="warp"> */}
             {/* <p style={{ color: "white" }}>Already have an Account?</p> */}
-            <Link to={`/`}>Login</Link>
+            <Link to={`/`} style={{ color: "aqua" }}>
+              Login
+            </Link>
             {/* </div> */}
           </form>
         </div>
