@@ -19,6 +19,11 @@ input{
   font-family: outfit;
 }
 
+/* 
+.active{
+  color:blue;
+} */
+
 .icons{
   color: rgb(4, 55, 255);
     font-size: 22px;
@@ -34,8 +39,12 @@ input{
 }
 
 .NavIcons{
-  font-size: 22px;
+  font-size: 25px;
   /* color:#575757; */
+  stroke:grey;
+  stroke-width: 20px;
+  padding-bottom: 6px;
+    margin-bottom: 8px;
 }
 .imgNav{
   width:2rem;
@@ -71,5 +80,7 @@ input{
 body{
   overflow: scroll;
 }
-
+/* .active{
+  color:blue;
+} */
 /* a{} */

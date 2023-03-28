@@ -18,18 +18,20 @@ export default function MainPart() {
 
   return (
     <div className="PostsContainer">
-      {Posts &&
-        Posts.data.map((data, key) => {
-          return (
-            <Uploads
-              key={key}
-              time={data.time}
-              userName={data.user.userName}
-              content={data.content}
-              date={data.date}
-            />
-          );
-        })}
+      <div className="hehe" style={{ paddingTop: "2rem" }}>
+        {Posts &&
+          Posts.data.map((data, key) => {
+            return (
+              <Uploads
+                key={key}
+                time={data.time}
+                userName={data.user.userName}
+                content={data.content}
+                date={data.date}
+              />
+            );
+          })}
+      </div>
     </div>
   );
 }

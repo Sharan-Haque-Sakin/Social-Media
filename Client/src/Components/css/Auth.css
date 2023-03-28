@@ -13,7 +13,6 @@
 a{
     margin-top: 1rem;
     /* color: rgb(0, 119, 255); */
-color: aqua;
 margin: auto;
 margin-top: 1rem;
 }
@@ -22,7 +21,7 @@ margin-top: 1rem;
     color:white;
 }
 a:visited {
-color: aqua;
+color: none;
 }
 
 .Middle h2 {

@@ -4,7 +4,7 @@ import { Container } from "./Styles/Pages";
 export default function Friends() {
   return (
     <Container>
-      <Navbar />
+      {/* <Navbar /> */}
       <h1>Coming soon...</h1>
       <h6>
         (The creator of this website was being a lazy person to work on this

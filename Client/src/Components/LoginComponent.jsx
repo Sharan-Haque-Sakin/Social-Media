@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
 import Cookies from "universal-cookie";
 import "./css/Auth.css";
 import bg from "../backgrounds/image.png";
@@ -32,6 +33,16 @@ const LoginComponent = () => {
   // Declaration
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const checkCookies = cookies.get("authcookie");
+
+    if (!checkCookies) {
+      navigate("/");
+    } else {
+      navigate("/home");
+    }
+  });
 
   const OnSubmit = (e) => {
     e.preventDefault();

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { PostButton } from "./Styles/Pages";
 import { useNavigate } from "react-router-dom";
-
+import "./Styles/Posts.css";
 export default function Post(props) {
   let navigate = useNavigate();
 
@@ -36,10 +36,14 @@ export default function Post(props) {
   };
 
   return (
-    <>
+    <div className="postKoro">
       {success && navigate("/home")}
-      <Navbar />
-      <form action="post" onSubmit={(e) => handleSubmit(e)}>
+      {/* <Navbar /> */}
+      <form
+        action="post"
+        style={{ backgroundColor: "#f5f5f5" }}
+        onSubmit={(e) => handleSubmit(e)}
+      >
         <textarea
           onChange={(e) => setContent(e.target.value)}
           cols={50}
@@ -63,6 +67,6 @@ export default function Post(props) {
         {/* {console.log(content)} */}
         <input type="submit" value="Post" className="postBtn" />
       </form>
-    </>
+    </div>
   );
 }

@@ -15,7 +15,7 @@ const Home = (props) => {
   // }, []);
   return (
     <Container>
-      <Navbar />
+      {/* <Navbar /> */}
       <MainPart />
     </Container>
   );

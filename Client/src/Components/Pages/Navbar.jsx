@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
 import { FaUserFriends, FaUpload } from "react-icons/fa";
 // import ProfilePic from "../../ProfileImg/profile.png";
@@ -9,10 +9,11 @@ import Cookies from "universal-cookie";
 const Nav = styled.nav`
   padding-top: 1rem;
   display: flex;
-  color: white;
   padding-bottom: 1rem;
   text-align: center;
-  background-color: purple;
+  margin-bottom: -16px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid grey;
 `;
 
 const ItemsContainer = styled.ul`
@@ -26,7 +27,6 @@ const Items = styled.li`
   list-style: none;
   text-align: center;
   a {
-    color: white;
     text-decoration: none;
     transition: color 0.5s ease;
     &:hover {
@@ -35,7 +35,7 @@ const Items = styled.li`
   }
 `;
 
-const Links = styled.a`
+const NavLinks = styled.a`
   text-decoration: none;
   color: white;
 `;
@@ -47,6 +47,14 @@ const Navbar = (props) => {
     cookies.remove("authcookie");
     navigate("/");
   }
+
+  const NavLinkStyle = ({ isActive }) => {
+    return {
+      color: isActive ? "blue" : "white",
+      borderBottom: isActive ? "3px solid blue" : "none",
+      stroke: isActive ? "blue" : "grey",
+    };
+  };
 
   useEffect(() => {
     fetch("/posts/getname")
@@ -69,33 +77,38 @@ const Navbar = (props) => {
         src={ProfilePic}
         alt=""
       /> */}
-      <p style={{ paddingLeft: "2rem" }}>{name}</p>
+      <p style={{ paddingLeft: "2rem", color: "black" }}>{name}</p>
 
       <ItemsContainer>
         <Items>
-          <Link to={`/home`}>
+          <NavLink to={`/home`} style={NavLinkStyle}>
             <AiFillHome className="NavIcons" />
-          </Link>
+          </NavLink>
         </Items>
         {/* <Items> */}
-        {/* <Link to={`/profile`}> */}
-        {/* </Link> */}
+        {/* <NavLink to={`/profile`}> */}
+        {/* </NavLink> */}
         {/* </Items> */}
         <Items>
-          <Link to={`/friends`}>
+          <NavLink to={`/friends`} style={NavLinkStyle}>
             <FaUserFriends className="NavIcons" />
-          </Link>
+          </NavLink>
         </Items>
 
         <Items>
-          <Link to={`/post`}>
+          <NavLink to={`/post`} style={NavLinkStyle}>
             <FaUpload className="NavIcons" />
-          </Link>
+          </NavLink>
         </Items>
 
         <a
           onClick={() => handleLogOut()}
-          style={{ marginTop: "0rem", marginLeft: "2rem", cursor: "pointer" }}
+          style={{
+            marginTop: "0rem",
+            marginLeft: "2rem",
+            cursor: "pointer",
+            color: "blue",
+          }}
         >
           Log Out
         </a>
