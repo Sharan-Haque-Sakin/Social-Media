@@ -36,4 +36,8 @@ app.use("/user", Routes);
 app.use("/user/auth", UserIn);
 app.use("/posts/", PostRoutes);
 
-app.listen(8000, () => console.log("Your server is running on port 8000"));
+// Port
+
+const PORT = process.env.PORT;
+
+app.listen(PORT, () => console.log("Your server is running on port 8000"));
