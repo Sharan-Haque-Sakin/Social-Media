@@ -35,7 +35,7 @@ const SignUpComponent = (props) => {
   const navigate = useNavigate();
   function OnSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:8000/user/auth/signup", {
+    fetch("https://mysocialmediabackend.onrender.com/user/auth/signup", {
       method: "POST",
       crossDomain: "true",
       headers: {

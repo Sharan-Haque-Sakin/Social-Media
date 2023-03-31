@@ -4,7 +4,7 @@ import Uploads from "./Feeds";
 export default function MainPart() {
   const [Posts, setPosts] = useState();
   useEffect(() => {
-    fetch("/posts")
+    fetch("https://mysocialmediabackend.onrender.com/posts")
       .then((data) => {
         return data.json();
       })

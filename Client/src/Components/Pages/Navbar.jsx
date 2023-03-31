@@ -57,7 +57,7 @@ const Navbar = (props) => {
   };
 
   useEffect(() => {
-    fetch("/posts/getname")
+    fetch("https://mysocialmediabackend.onrender.com/posts/getname")
       .then((data) => {
         return data.json();
       })
