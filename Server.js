@@ -17,12 +17,12 @@ const UserIn = require("./Routes/Auth");
 require("dotenv").config();
 
 mongoose.set("strictQuery", true);
-mongoose
-  .connect(process.env.MONGODB)
-  .then(() => {
-    console.log("MongoDb connected");
-  })
-  .catch((err) => console.log(err));
+// mongoose
+//   .connect(process.env.MONGODB)
+//   .then(() => {
+//     console.log("MongoDb connected");
+//   })
+//   .catch((err) => console.log(err));
 
 // Parsers and Middlewares!
 
@@ -38,6 +38,23 @@ app.use("/posts/", PostRoutes);
 
 // Port
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => console.log("Your server is running on port 8000"));
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI);
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
+};
+
+//Routes go here
+
+//Connect to the database before listening
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log("listening for requests");
+  });
+});
